@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-craft"
+version = "0.1.0"
+description = "LLM from scratch learning project"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["tools*", "model*", "demo*", "data*", "ch02*", "ch03*", "ch04*", "ch05*", "ch06*", "ch07*", "llm_example*"]
+
+[tool.pyright]
+pythonPlatform = "All"
+extraPaths = ["."]
