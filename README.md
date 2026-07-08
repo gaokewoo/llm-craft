@@ -55,6 +55,7 @@ llm-craft/
 - **`data/tools/`** — 数据与权重下载脚本：
   - `download_verdict_file.py`：下载《The Verdict》训练文本
   - `download_gpt_model.py`：下载 GPT-2 124M 预训练权重
+  - `download_gpt335m_model.py`：下载 GPT-2 355M (medium) 预训练权重（指令微调用）
   - `gpt_download.py`：核心下载逻辑（通过 HuggingFace `transformers` 加载权重，无需 TensorFlow）
   - `download_spam_data.py`：下载并预处理 SMS 垃圾短信数据集
   - `download_instruction_data.py`：下载指令微调数据集
@@ -151,8 +152,11 @@ pip install torch tiktoken numpy matplotlib pandas tqdm requests transformers
 # 下载《The Verdict》训练文本（从零训练用）
 python -m data.tools.download_verdict_file
 
-# 下载 GPT-2 124M 预训练权重（微调用）
+# 下载 GPT-2 124M 预训练权重（分类微调用）
 python -m data.tools.download_gpt_model
+
+# 下载 GPT-2 355M 预训练权重（指令微调用）
+python -m data.tools.download_gpt335m_model
 
 # 下载 SMS 垃圾短信数据集（分类任务用）
 python -m data.tools.download_spam_data
